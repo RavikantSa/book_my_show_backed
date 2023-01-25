@@ -1,7 +1,10 @@
 package com.example.Book_My_Show.Models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
@@ -12,6 +15,9 @@ import java.util.List;
 @Entity
 @Table(name="shows")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ShowEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +25,12 @@ public class ShowEntity {
     private LocalDate showDate;
     private LocalTime showTime;
 
+
     @CreationTimestamp
     private Date createdOn;
     @CreationTimestamp
     private Date updatedOn;
+    private  double Multiplier;
 
     @ManyToOne
     @JoinColumn

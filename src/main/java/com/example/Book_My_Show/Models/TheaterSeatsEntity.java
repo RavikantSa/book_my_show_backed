@@ -1,14 +1,20 @@
 package com.example.Book_My_Show.Models;
 
 import com.example.Book_My_Show.Enums.SeatType;
-import jakarta.persistence.*;
+import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.security.PrivateKey;
 
 @Entity
 @Table(name = "theater_seats")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class TheaterSeatsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +31,6 @@ public class TheaterSeatsEntity {
     private  TheaterEntity theater;
 
 
-
-
+    public TheaterSeatsEntity(String seatNo , SeatType classic, int i) {
+    }
 }

@@ -1,14 +1,21 @@
 package com.example.Book_My_Show.Models;
 
-import jakarta.persistence.*;
-import lombok.Data;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Data
 @Entity
 @Table(name = "movies")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class MovieEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
